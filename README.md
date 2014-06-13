@@ -36,6 +36,9 @@ config.store('scripts/settings');
 - [Static methods](#static-methods)
     - [`Configurator.getMainConfig([Object options])`](#configuratorgetmainconfigobject-options---configurator)
 
+- [Static members](#static-members)
+    - [`Configurator.version`](#configuratorversion)
+
 - [Member methods](#member-methods)
     - [`.get(Array<String>|String)`](#getarraystringstring---dynamic)
     - [`.set(Array<String>|String key, Dynamic value)`](#setarraystringstring-key-dynamic-value---dynamic)
@@ -47,6 +50,11 @@ config.store('scripts/settings');
     - [`.move(Array<String>|String fromKey, Array<String>|String toKey [, Boolean merge])`](#movearraystringstring-fromkey-arraystringstring-tokey--boolean-merge)
     - [`.merge(Array<String>|String key, Dynamic value [, String replaceKey])`](#mergearraystringstring-key-dynamic-value--string-replacekey---object)
     - [`.reset()`](#reset)
+
+- [Private members](#private-members)
+    - [`.root`](#root)
+    - [`.meta`](#meta)
+    - [`.options`](#options)
 
 ###Glossary
 
@@ -124,6 +132,13 @@ The `storeMetadata` Boolean value refers to the loading and storing of configura
 If a main instance does not exist, it will create with with any options provided (See Configurator constructor for options details).
 
 Otherwise, it will return the previously created Configurator instance.
+
+###Static members
+
+<hr>
+#####`Configurator.version`
+
+Contains version information for the module in the format `'major.minor.revision'`
 
 ###Member methods
 
@@ -258,3 +273,21 @@ If the value already at `key` is no an object, then it will create an object and
 #####`.reset()`
 
 This will completely reset the entire Configurator instance, clearing all data. Use with care.
+
+###Private Members
+
+These are internal variables that should not be tampered with, but I'm including documentation of anyway.
+
+#####`.root`
+
+`.root` is the root node of the configuration tree. Everything is saved inside it.
+
+#####`.meta`
+
+`.meta` acts as a hashtable to store raw information about file loads. It allows for `.store` to save configuration paths that were created from loaded files automatically.
+
+#####`.options`
+
+`.options` is a small object containing only two (as of now) options that are the same as given in the constructor.
+
+*NOTE*: changing the internal options object can mess up the `.meta` object. So it should never be changed after construction.
