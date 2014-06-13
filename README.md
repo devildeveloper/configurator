@@ -27,6 +27,27 @@ config.store('scripts/settings');
 
 #API Documentation
 
+- [Glossary](#glossary)
+    - [Stores](#store)
+
+- [Configurator Constructor](#constructor)
+    - [`new Configurator([Object options])`](#new-configuratorobject-options)
+
+- [Static methods](#static-methods)
+    - [`Configurator.getMainConfig([Object options])`](#configuratorgetmainconfigobject-options---configurator)
+
+- [Member methods](#member-methods)
+    - [`.get(Array<String>|String)`](#getarraystringstring---dynamic)
+    - [`.set(Array<String>|String key, Dynamic value)`](#setarraystringstring-key-dynamic-value---dynamic)
+    - [`.load([Array<String>|String key, ] Object|String options|filepath [, callback])`](#loadarraystringstring-key--objectstring-optionsfilepath--callback---see-details)
+    - [`.store(Array<String>|String key [, Object|String options|filepath [, callback]])`](#storearraystringstring-key--objectstring-optionsfilepath--callback)
+        - alias: `.save`
+    - [`.addStore(String name, Object store)`](#addstorestring-name-object-store)
+    - [`.clear(Array<String>|String key)`](#cleararraystringstring-key)
+    - [`.move(Array<String>|String fromKey, Array<String>|String toKey [, Boolean merge])`](#movearraystringstring-fromkey-arraystringstring-tokey--boolean-merge)
+    - [`.merge(Array<String>|String key, Dynamic value [, String replaceKey])`](#mergearraystringstring-key-dynamic-value--string-replacekey---object)
+    - [`.reset()`](#reset)
+
 ###Glossary
 
 There is really only one term that may be strange.
