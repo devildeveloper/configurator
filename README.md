@@ -201,7 +201,7 @@ See here:
 
 Where 'YAML-UNSAFE' is a custom store used to parse/stringify unsafe YAML code. By default, YAML is included with Configurator but uses the safe settings.
 
-NOTE: dir is technically not needed for the load options, but is included in all examples anyway.
+**NOTE**: dir is technically not needed for the load options, but is included in all examples anyway.
 
 <hr>
 #####`.store(Array<String>|String key [, Object|String options|filepath [, callback]])`
@@ -225,7 +225,7 @@ Assuming you added the `'JSON-pretty'` Store to the Configurator.
 
 Additionally, like `.load`, `.store` can be executed asynchronously or synchronously, depending on whether or not a callback is given to it.
 
-NOTE: if `storeMetadata` is set to false, Configurator cannot automatically know the location in which to save the file, so a filepath or save
+**NOTE**: if `storeMetadata` is set to false, Configurator cannot automatically know the location in which to save the file, so a filepath or save
 
 <hr>
 #####`.addStore(String name, Object store)`
@@ -246,7 +246,7 @@ config.addStore('JSON-pretty', {
 
 And it will be added with the name/type `'JSON-pretty'`.
 
-NOTE: Store names as CASE INSENSITIVE.
+**NOTE**: Store names as CASE INSENSITIVE.
 
 <hr>
 #####`.clear(Array<String>|String key)`
@@ -290,4 +290,4 @@ These are internal variables that should not be tampered with, but I'm including
 
 `.options` is a small object containing only two (as of now) options that are the same as given in the constructor.
 
-*NOTE*: changing the internal options object can mess up the `.meta` object. So it should never be changed after construction.
+**NOTE**: changing the internal options object can mess up the `.meta` object. So it should never be changed after construction.
