@@ -1,0 +1,30 @@
+{
+    "name":            "configurator",
+    "version":         "0.1.0",
+    "description":     "A generic configuration tool for loading and storing all sorts of configuration sources",
+    "main":            "index.js",
+    "directories":     {
+        "test": "test"
+    },
+    "dependencies":    {
+        "ini":      "^1.2.1",
+        "js-yaml":  "^3.0.2",
+        "lodash":   "^2.4.1",
+        "minimist": "^0.1.0"
+    },
+    "devDependencies": {
+        "mocha": "^1.20.1"
+    },
+    "scripts":         {
+        "test": "mocha"
+    },
+    "keywords":        [
+        "config",
+        "yaml",
+        "ini",
+        "save"
+    ],
+    "author":          "Aaron Trent <novacrazy@gmail.com>",
+    "license":         "MIT",
+    "private":         true
+}

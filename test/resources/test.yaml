@@ -1,0 +1,13 @@
+name: Example Developer
+job: Developer
+skill: Elite
+employed: true
+foods:
+  - Apple
+  - Orange
+  - Strawberry
+  - Mango
+languages:
+  ruby: Elite
+  python: Elite
+  dotnet: Lame
